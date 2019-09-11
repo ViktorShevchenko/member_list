@@ -46,6 +46,10 @@
 				</div>
 			</form>
 		</div>
+
+		<div>
+			<p class="text-center">Created by Viktor Shevchenko (098-577-93-17, svnnsv@i.ua). Link to the repository <a href="https://github.com/ViktorShevchenko/member_list">Github</a></p>
+		</div>
 		
 		<div id="action_alert" title="Action">
 			

@@ -1,11 +1,11 @@
 <html>  
     <head>  
         <title>PHP Ajax jQuery Member list</title>
-		<link rel="stylesheet" href="jquery-ui.css">
+	<link rel="stylesheet" href="jquery-ui.css">
         <link rel="stylesheet" href="bootstrap.min.css" />
-         <meta charset="UTF-8">
-		<script src="jquery.min.js"></script>  
-		<script src="jquery-ui.js"></script>
+        <meta charset="UTF-8">
+	<script src="jquery.min.js"></script>  
+	<script src="jquery-ui.js"></script>
     </head>  
     <body>  
         <div class="container">

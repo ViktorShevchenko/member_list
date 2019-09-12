@@ -1,17 +1,18 @@
-<html>  
+<html lang="en">  
     <head>  
         <title>PHP Ajax jQuery Member list</title>
-	<link rel="stylesheet" href="jquery-ui.css">
-        <link rel="stylesheet" href="bootstrap.min.css" />
         <meta charset="UTF-8">
-	<script src="jquery.min.js"></script>  
-	<script src="jquery-ui.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="jquery-ui.css">
+        <link rel="stylesheet" href="bootstrap.min.css" />
+		<script src="jquery.min.js"></script>  
+		<script src="jquery-ui.js"></script>
     </head>  
     <body>  
         <div class="container">
 			<br />
 			
-			<h3 align="center">Member list</h3><br />
+			<h3 align="center">Member list</a></h3><br />
 			<br />
 			<div align="right" style="margin-bottom:5px;">
 			<button type="button" name="add" id="add" class="btn btn-success btn-xs">Add</button>
@@ -102,46 +103,48 @@ $(document).ready(function(){
 		var error_second_name = '';
 		var error_email = '';
 		var email = $('#email').val();
+		var firstName = $('#first_name').val();
+		var secondName = $('#second_name').val();
+		
 
-		if($('#first_name').val() == '')
-		{
-			error_first_name = 'First Name is expected';
+		// function for validating the inserted by user First Name and Second Name via regexp
+  		function validateName(name) {
+  			var nameReg =  /^[0-9a-zA-Z-]+$/;
+  			return nameReg.test(name);
+		}
+
+		if($('#first_name').val() == '' || !validateName(firstName)) {
+			error_first_name = 'Only letters, numbers and hyphens allowed';
 			$('#error_first_name').text(error_first_name);
 			$('#first_name').css('border-color', '#cc0000');
-		}
-		else
-		{
+		} else {
 			error_first_name = '';
 			$('#error_first_name').text(error_first_name);
 			$('#first_name').css('border-color', '');
 		}
-		if($('#second_name').val() == '')
-		{
-			error_second_name = 'Second Name is expected';
+
+		if($('#second_name').val() == '' || !validateName(secondName)) {
+			error_second_name = 'Only letters, numbers and hyphens allowed';
 			$('#error_second_name').text(error_second_name);
 			$('#second_name').css('border-color', '#cc0000');
-		}
-		else
-		{
+		} else {
 			error_second_name = '';
 			$('#error_second_name').text(error_second_name);
 			$('#second_name').css('border-color', '');
 		}
 	
-		// function for checking an email via regexp, which is inserted by user when adding a new member 
+		// function for validating the inserted by user email via regexp
 		function validateEmail(email) {
   			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
   			return emailReg.test(email);
 		}
-	
-		if($('#email').val() == '' || !validateEmail(email))
-		{
+
+			
+		if($('#email').val() == '' || !validateEmail(email)) {
 			error_email = 'A valid Email is expected e.g.: example@example.com';
 			$('#error_email').text(error_email);
 			$('#email').css('border-color', '#cc0000');
-		}
-		else
-		{
+		} else {
 			error_email = '';
 			$('#error_email').text(error_email);
 			$('#email').css('border-color', '');
@@ -149,12 +152,9 @@ $(document).ready(function(){
 
 
 		
-		if(error_first_name != '' || error_second_name != '' || error_email != '')
-		{
+		if(error_first_name != '' || error_second_name != '' || error_email != '') {
 			return false;
-		}
-		else
-		{
+		} else {
 			$('#form_action').attr('disabled', 'disabled');
 			var form_data = $(this).serialize();
 			$.ajax({

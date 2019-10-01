@@ -1,0 +1,57 @@
+<html lang="en">  
+    <head>  
+        <title>PHP Ajax jQuery Member list</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/jquery-ui.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery.min.js"></script>  
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/script.js"></script>
+    </head>  
+    <body>  
+        <!-- space above the main table -->
+        <div class="container">
+            <h1>Member list</h1>
+            <div id="right">
+                <button type="button" name="add" id="add" class="btn btn-success btn-xs">Add</button>
+            </div>
+            <!--  the table is set here-->
+            <div class="table-responsive" id="user_data"></div>
+        </div>
+        <!-- the dialog table for input/edit of the member's data-->
+        <div id="user_dialog" title="Add Data">
+            <form method="post" id="user_form">
+                <div class="form-group">
+                    <label>Enter First Name</label>
+                    <input type="text" name="first_name" id="first_name" class="form-control" />
+                    <span id="error_first_name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label>Enter Second Name</label>
+                    <input type="text" name="second_name" id="second_name" class="form-control" />
+                    <span id="error_second_name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label>Enter Email</label>
+                    <input type="text" name="email" id="email" class="form-control" />
+                    <span id="error_email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="action" id="action" value="insert" />
+                    <input type="hidden" name="hidden_id" id="hidden_id" />
+                    <input type="submit" name="form_action" id="form_action" class="btn btn-info" value="Insert" />
+                </div>
+            </form>
+        </div>
+        <!-- line beneath the main table with the developer's contacts-->
+        <div>
+            <p id="developer_reference">Created by Viktor Shevchenko (098-577-93-17, svnnsv@i.ua). Link to the repository <a href="https://github.com/ViktorShevchenko/member_list">Github</a></p>
+        </div>
+		<!-- the modal window warning before deleting a member-->
+		<div id="delete_confirmation" title="Confirmation">
+			<p>Are you sure you want to Delete this data?</p>
+		</div>
+    </body>  
+</html>  

@@ -1,0 +1,50 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700';
+
+body {
+  font-family: Montserrat, sans-serif;
+  background: #eee;
+}
+
+h1 {
+  margin-top: 40px;
+  font-weight: normal;
+  letter-spacing: -1px;
+  color: #34495E;
+  text-align: center;
+}
+
+#right {
+  text-align: right;
+}
+
+#user_data, .ui-dialog, .ui-dialog-titlebar, .ui-dialog-buttonpane {
+  margin-top: 10px;
+  background: #34495E;
+  border-radius: .6em;
+}
+.ui-dialog-titlebar {
+  text-align: center;
+}
+.table, .form-group, #ui-id-1, .ui-widget-content, .ui-dialog-title {
+  margin-bottom: 0;
+  color: #eee;
+}
+
+.ui-dialog-buttonpane {
+  background: #34495E;
+  margin: 0;
+}
+
+#form_action {
+  margin-top: 20px;
+}
+
+.ui-widget-header, .ui-widget-content {
+  border: none;
+}
+
+#developer_reference {
+  margin-top: 40px;
+  text-align: center;
+  color: #34495E;
+}

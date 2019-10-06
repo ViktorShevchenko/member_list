@@ -1,5 +1,4 @@
 $(document).ready(function() {  
-
 	load_data();
     
 	function load_data(){
@@ -36,49 +35,6 @@ $(document).ready(function() {
 		var secondName = $('#second_name').val();
 		
 
-		// function for validating the inserted by user First Name and Second Name via regexp
-  		function validateName(name) {
-  			var nameReg =  /^[0-9a-zA-Z-]+$/;
-  			return nameReg.test(name);
-		}
-
-		if($('#first_name').val() == '' || !validateName(firstName)){
-			error_first_name = 'Only letters, numbers and hyphens allowed';
-			$('#error_first_name').text(error_first_name);
-			$('#first_name').css('border-color', '#cc0000');
-		} else {
-			error_first_name = '';
-			$('#error_first_name').text(error_first_name);
-			$('#first_name').css('border-color', '');
-		}
-
-		if($('#second_name').val() == '' || !validateName(secondName)){
-			error_second_name = 'Only letters, numbers and hyphens allowed';
-			$('#error_second_name').text(error_second_name);
-			$('#second_name').css('border-color', '#cc0000');
-		} else {
-			error_second_name = '';
-			$('#error_second_name').text(error_second_name);
-			$('#second_name').css('border-color', '');
-		}
-	
-		// function for validating the inserted by user email via regexp
-		function validateEmail(email){
-  			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-  			return emailReg.test(email);
-		}
-
-			
-		if($('#email').val() == '' || !validateEmail(email)){
-			error_email = 'A valid Email is expected e.g.: example@example.com';
-			$('#error_email').text(error_email);
-			$('#email').css('border-color', '#cc0000');
-		} else {
-			error_email = '';
-			$('#error_email').text(error_email);
-			$('#email').css('border-color', '');
-		}
-		
 		if(error_first_name != '' || error_second_name != '' || error_email != ''){
 			return false;
 		} else {
@@ -95,7 +51,6 @@ $(document).ready(function() {
 				}
 			});
 		}
-		
 	});
 	
 	$(document).on('click', '.edit', function(){
